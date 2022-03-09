@@ -13,13 +13,10 @@ const Participant = ({ participant }) => {
       .filter((track) => track !== null);
 
   useEffect(() => {
-    setVideoTracks(trackpubsToTracks(participant.videoTracks));
-    setAudioTracks(trackpubsToTracks(participant.audioTracks));
-
     const trackSubscribed = (track) => {
       if (track.kind === "video") {
         setVideoTracks((videoTracks) => [...videoTracks, track]);
-      } else if (track.kind === "audio") {
+      } else {
         setAudioTracks((audioTracks) => [...audioTracks, track]);
       }
     };
@@ -27,10 +24,13 @@ const Participant = ({ participant }) => {
     const trackUnsubscribed = (track) => {
       if (track.kind === "video") {
         setVideoTracks((videoTracks) => videoTracks.filter((v) => v !== track));
-      } else if (track.kind === "audio") {
+      } else {
         setAudioTracks((audioTracks) => audioTracks.filter((a) => a !== track));
       }
     };
+
+    setVideoTracks(trackpubsToTracks(participant.videoTracks));
+    setAudioTracks(trackpubsToTracks(participant.audioTracks));
 
     participant.on("trackSubscribed", trackSubscribed);
     participant.on("trackUnsubscribed", trackUnsubscribed);

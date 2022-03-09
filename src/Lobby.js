@@ -6,7 +6,6 @@ const Lobby = ({
   roomName,
   handleRoomNameChange,
   handleSubmit,
-  connecting,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -18,7 +17,6 @@ const Lobby = ({
           id="field"
           value={username}
           onChange={handleUsernameChange}
-          readOnly={connecting}
           required
         />
       </div>
@@ -30,14 +28,10 @@ const Lobby = ({
           id="room"
           value={roomName}
           onChange={handleRoomNameChange}
-          readOnly={connecting}
           required
         />
       </div>
-
-      <button type="submit" disabled={connecting}>
-        {connecting ? "Connecting" : "Join"}
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 };

@@ -53,15 +53,17 @@ h2 {
   text-align: center;
 }
 
-form > div {
+form>div {
   width: 100%;
   margin-bottom: 1em;
 }
-form > div > label {
+
+form>div>label {
   display: block;
   margin-bottom: 0.3em;
 }
-form > div > input {
+
+form>div>input {
   display: block;
   width: 100%;
   font-size: 16px;
@@ -78,6 +80,7 @@ button {
   border-radius: 6px;
   border: 1px solid transparent;
 }
+
 button:hover {
   filter: brightness(150%);
 }
@@ -85,12 +88,14 @@ button:hover {
 .room {
   position: relative;
 }
+
 .room button {
   position: absolute;
   top: 0;
   right: 20px;
 }
-.room > h3 {
+
+.room>h3 {
   text-align: center;
   font-weight: 300;
   margin-bottom: 1em;
@@ -100,12 +105,18 @@ button:hover {
   text-align: center;
   margin-bottom: 2em;
 }
+
 .remote-participants {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  padding: 0 2em 2em;
+  /* padding: 0 2em 2em; */
 }
+
+.center {
+  display: flex;
+}
+
 .participant {
   background: #333e5a;
   padding: 10px;
@@ -113,9 +124,11 @@ button:hover {
   display: inline-block;
   margin-right: 10px;
 }
+
 .participant:last-child {
   margin-right: 0;
 }
+
 .participant h3 {
   text-align: center;
   padding-bottom: 0.5em;
